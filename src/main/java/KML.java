@@ -17,22 +17,43 @@ import de.micromata.opengis.kml.v_2_2_0.Polygon;
 
 public class KML {
 
+	private Kml kml;
+
 	@Test
 	public void parseKml() {
-		String src = "u1.kml";
+		String src = "u2.kml";
 		InputStream is = getClass().getClassLoader().getResourceAsStream(src);
 		Assert.assertNotNull(is);
-		Kml kml = Kml.unmarshal(is);
+		kml = Kml.unmarshal(is);
 		Feature feature = kml.getFeature();
 		parseFeature(feature);
 	}
 
+	private Geometry getGeometry(Kml kml) {
+		if (kml != null) {
+			Feature feature = kml.getFeature();
+			if (feature instanceof Document) {
+				Document document = (Document) feature;
+				List<Feature> featureList = document.getFeature();
+				for (Feature documentFeature : featureList) {
+					if (documentFeature instanceof Placemark) {
+						Placemark placemark = (Placemark) documentFeature;
+						return placemark.getGeometry();
+					}
+				}
+			}
+		}
+		return null;
+	}
+	
+	
 	private void parseFeature(Feature feature) {
 		if (feature != null) {
 			if (feature instanceof Document) {
 				Document document = (Document) feature;
 				List<Feature> featureList = document.getFeature();
 				for (Feature documentFeature : featureList) {
+					System.out.println("Feature: "+documentFeature.getName());
 					if (documentFeature instanceof Placemark) {
 						Placemark placemark = (Placemark) documentFeature;
 						Geometry geometry = placemark.getGeometry();
@@ -45,54 +66,55 @@ public class KML {
 
 	private void parseGeometry(Geometry geometry) {
 		if (geometry != null) {
+			//Path
 			if (geometry instanceof LineString) {
 				LineString lineString = (LineString) geometry;
 				List<Coordinate> coordinates = lineString.getCoordinates();
-				if (coordinates != null) {
-					for (Coordinate coordinate : coordinates) {
-						parseCoordinate(coordinate);
-					}
+				if (!coordinates.isEmpty()) {
+					printCoordinates(coordinates);
 				}
 			}
-			if(geometry instanceof Polygon) {
-	            Polygon polygon = (Polygon) geometry;
-	            Boundary outerBoundaryIs = polygon.getOuterBoundaryIs();
-	            if(outerBoundaryIs != null) {
-	                LinearRing linearRing = outerBoundaryIs.getLinearRing();
-	                if(linearRing != null) {
-	                    List<Coordinate> coordinates = linearRing.getCoordinates();
-	                    if(coordinates != null) {
-	                        for(Coordinate coordinate : coordinates) {
-	                            parseCoordinate(coordinate);
-	                        }
-	                    }
-	                }
-	            }
-	        }
+			//Polygon
+			if (geometry instanceof Polygon) {
+				Boundary outerBoundaryIs = (Boundary) ((Polygon) geometry).getOuterBoundaryIs();
+				if (outerBoundaryIs != null) {
+					LinearRing linearRing = outerBoundaryIs.getLinearRing();
+					if (linearRing != null) {
+						List<Coordinate> coordinates = linearRing.getCoordinates();
+						if (!coordinates.isEmpty()) {
+							printCoordinates(coordinates);
+
+						}
+					}
+
+				}
+			}else {
+				System.out.println("KML type not suported");
+			}
 		}
+
 	}
 
-	private void parseCoordinate(Coordinate coordinate) {
-		if (coordinate != null) {
+	private void printCoordinates(List<Coordinate> coordinates) {
+		for (Coordinate coordinate : coordinates) {
 			System.out.println("Longitude: " + coordinate.getLongitude());
 			System.out.println("Latitude : " + coordinate.getLatitude());
-			//System.out.println("Altitude : " + coordinate.getAltitude());
-			System.out.println("");
 		}
 	}
 
-	// @Test
-	// public void parseKml() {
-	// final Kml kml =
-	// Kml.unmarshal(getClass().getClassLoader().getResourceAsStream("u.kml"));
-	// final Placemark placemark = (Placemark) kml.getFeature();
-	// Point point = (Point) placemark.getGeometry();
-	// List<Coordinate> coordinates = point.getCoordinates();
-	// for (Coordinate coordinate : coordinates) {
-	// System.out.println(coordinate.getLatitude());
-	// System.out.println(coordinate.getLongitude());
-	// System.out.println(coordinate.getAltitude());
-	// }
-	// }
+	/**
+	 * @return the kml
+	 */
+	public Kml getKml() {
+		return kml;
+	}
 
+	/**
+	 * @param kmlFile 
+	 */
+	public void setKmlObject(String kmlFile) {
+		kml = Kml.unmarshal(getClass().getClassLoader().getResourceAsStream(kmlFile));
+	}
+
+	
 }

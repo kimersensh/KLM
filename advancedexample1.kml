@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <name>JAK Example1</name>
+        <open>1</open>
+        <Style id="style_Asia">
+            <IconStyle>
+                <scale>5.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>http://chart.apis.google.com/chart?chs=380x200&amp;chd=t:30,70&amp;cht=p&amp;chf=bg,s,ffffff00</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>5.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Africa">
+            <IconStyle>
+                <scale>5.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>http://chart.apis.google.com/chart?chs=380x200&amp;chd=t:20,80&amp;cht=p&amp;chf=bg,s,ffffff00</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>5.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_North America">
+            <IconStyle>
+                <scale>5.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>http://chart.apis.google.com/chart?chs=380x200&amp;chd=t:17,83&amp;cht=p&amp;chf=bg,s,ffffff00</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>5.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_South America">
+            <IconStyle>
+                <scale>5.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>http://chart.apis.google.com/chart?chs=380x200&amp;chd=t:12,88&amp;cht=p&amp;chf=bg,s,ffffff00</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>5.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Europe">
+            <IconStyle>
+                <scale>5.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>http://chart.apis.google.com/chart?chs=380x200&amp;chd=t:7,93&amp;cht=p&amp;chf=bg,s,ffffff00</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>5.0</scale>
+            </LabelStyle>
+        </Style>
+        <Style id="style_Australia">
+            <IconStyle>
+                <scale>5.0</scale>
+                <heading>0.0</heading>
+                <Icon>
+                    <href>http://chart.apis.google.com/chart?chs=380x200&amp;chd=t:6,94&amp;cht=p&amp;chf=bg,s,ffffff00</href>
+                    <refreshInterval>0.0</refreshInterval>
+                    <viewRefreshTime>0.0</viewRefreshTime>
+                    <viewBoundScale>0.0</viewBoundScale>
+                </Icon>
+            </IconStyle>
+            <LabelStyle>
+                <color>ff43b3ff</color>
+                <scale>5.0</scale>
+            </LabelStyle>
+        </Style>
+        <Folder>
+            <name>Continents with Earth's surface</name>
+            <open>1</open>
+            <Placemark>
+                <name>Asia</name>
+                <description>&lt;![CDATA[&lt;img src=&quot;http://chart.apis.google.com/chart?chs=430x200&amp;chd=t:30,70&amp;cht=p3&amp;chl=Asia|remaining&amp;chtt=Earth's surface&quot; /&gt;</description>
+                <LookAt>
+                    <longitude>93.24607775062842</longitude>
+                    <latitude>47.49808862281773</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <styleUrl>#style_Asia</styleUrl>
+                <Point>
+                    <coordinates>93.24607775062842,47.49808862281773</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Africa</name>
+                <description>&lt;![CDATA[&lt;img src=&quot;http://chart.apis.google.com/chart?chs=430x200&amp;chd=t:20,80&amp;cht=p3&amp;chl=Africa|remaining&amp;chtt=Earth's surface&quot; /&gt;</description>
+                <LookAt>
+                    <longitude>19.44601806124206</longitude>
+                    <latitude>10.13133611111111</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <styleUrl>#style_Africa</styleUrl>
+                <Point>
+                    <coordinates>19.44601806124206,10.13133611111111</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>North America</name>
+                <description>&lt;![CDATA[&lt;img src=&quot;http://chart.apis.google.com/chart?chs=430x200&amp;chd=t:17,83&amp;cht=p3&amp;chl=North America|remaining&amp;chtt=Earth's surface&quot; /&gt;</description>
+                <LookAt>
+                    <longitude>-103.5286299241638</longitude>
+                    <latitude>41.26035225962401</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <styleUrl>#style_North America</styleUrl>
+                <Point>
+                    <coordinates>-103.5286299241638,41.26035225962401</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>South America</name>
+                <description>&lt;![CDATA[&lt;img src=&quot;http://chart.apis.google.com/chart?chs=430x200&amp;chd=t:12,88&amp;cht=p3&amp;chl=South America|remaining&amp;chtt=Earth's surface&quot; /&gt;</description>
+                <LookAt>
+                    <longitude>-59.96161780270248</longitude>
+                    <latitude>-13.27347674076888</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <styleUrl>#style_South America</styleUrl>
+                <Point>
+                    <coordinates>-59.96161780270248,-13.27347674076888</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Europe</name>
+                <description>&lt;![CDATA[&lt;img src=&quot;http://chart.apis.google.com/chart?chs=430x200&amp;chd=t:7,93&amp;cht=p3&amp;chl=Europe|remaining&amp;chtt=Earth's surface&quot; /&gt;</description>
+                <LookAt>
+                    <longitude>14.45531426360271</longitude>
+                    <latitude>47.26208181151567</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <styleUrl>#style_Europe</styleUrl>
+                <Point>
+                    <coordinates>14.45531426360271,47.26208181151567</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>Australia</name>
+                <description>&lt;![CDATA[&lt;img src=&quot;http://chart.apis.google.com/chart?chs=430x200&amp;chd=t:6,94&amp;cht=p3&amp;chl=Australia|remaining&amp;chtt=Earth's surface&quot; /&gt;</description>
+                <LookAt>
+                    <longitude>135.0555272486322</longitude>
+                    <latitude>-26.23824399654937</latitude>
+                    <altitude>0.0</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1.2E7</range>
+                </LookAt>
+                <styleUrl>#style_Australia</styleUrl>
+                <Point>
+                    <coordinates>135.0555272486322,-26.23824399654937</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>
