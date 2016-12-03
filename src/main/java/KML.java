@@ -76,7 +76,7 @@ public class KML {
 		if (coordinate != null) {
 			System.out.println("Longitude: " + coordinate.getLongitude());
 			System.out.println("Latitude : " + coordinate.getLatitude());
-			System.out.println("Altitude : " + coordinate.getAltitude());
+			//System.out.println("Altitude : " + coordinate.getAltitude());
 			System.out.println("");
 		}
 	}
